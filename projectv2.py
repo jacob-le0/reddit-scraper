@@ -50,20 +50,23 @@ def transform_reddit(raw_data, user_dict):
 
         bodytext = raw_data['data']['children'][i]['data']['selftext']
         
-        key = name_counter(title, bodytext, user_dict.keys())
+        key = name_counter(title, bodytext, user_dict)
 
         # Adds one to the counter if the corresponding key is found
-        if key in user_dict:
-            user_dict[key]+=1
+        for i in key:
+            if i in user_dict:
+                user_dict[i]+=1
     
     return user_dict
 
 def name_counter(title, bodytext, name):
     """Returns the key found in each individual post, title and body text."""
+    mentions = set()
 
     for i in name:
         if i in title.lower() or i in bodytext.lower():
-            return i
+            mentions.add(i)
+    return mentions
     
 
 

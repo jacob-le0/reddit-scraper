@@ -18,3 +18,5 @@ The transform function is called with the extracted raw data as its parameter, e
 The load function is called with two parameters: the variable equated to the transform function, and the name for the csv file.
 
 Matplotlib was used to visualize the results of the search via bar graph.
+
+2/5/23: Added posts input into url.

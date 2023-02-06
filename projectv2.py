@@ -3,10 +3,10 @@ from unidecode import unidecode
 import matplotlib.pyplot as plt
 
 #Extract
-def extract_reddit(subreddit):
+def extract_reddit(subreddit, posts):
     """Return data from a subreddit"""
     # Input pointer to raw data source
-    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit=100"
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json?limit={posts}"
     
     # Define a unique user agent value
     head = {'user-agent': 'Jacob Leo App v0.0.1'}
@@ -33,7 +33,7 @@ def population():
 # Transform 
 def transform_reddit(raw_data, user_dict):
     """Raw data transformed into informational data"""
-    
+
     # Iterate through the title and body text of the first 100 posts in r/worldcup and search for the keys in dictionary
     for i in range (100):
         title = raw_data['data']['children'][i]['data']['title']
@@ -81,7 +81,8 @@ def graph_reddit(population):
     plt.show()
 
 subreddit = input("Enter a subreddit you would like to scrape (omit the r/): ")
-status, raw_data = extract_reddit(subreddit)
+posts = input("Enter the amount of posts you would like to scrape (max. 100): ")
+status, raw_data = extract_reddit(subreddit, posts)
 user_dict = population()
 name_data = transform_reddit(raw_data, user_dict)
 load_reddit(name_data, 'name_mentions')

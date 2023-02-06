@@ -16,3 +16,5 @@ Extract, Transform and Load functions are all called in lines 62, 63, and 64 res
 The extract function is called with the name of the subreddit (as it would be in the url) as a parameter.
 The transform function is called with the extracted raw data as its parameter, equated to a variable.
 The load function is called with two parameters: the variable equated to the transform function, and the name for the csv file.
+
+Matplotlib was used to visualize the results of the search via bar graph.

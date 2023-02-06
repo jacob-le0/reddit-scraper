@@ -1,13 +1,6 @@
 import requests
 from unidecode import unidecode
 import matplotlib.pyplot as plt
-"""Notes/Plans: 
-*Populate an empty dictionary with user input
-*Populate url with subreddit of user's choice
-*Input the generated dictionary into transform_reddit
-*Create a visual graph (matplotlib) representing the data pulled from reddit
-Figure out a way for the counter to continue counting other keys for more accurate data
-    i.e. If a post includes more than one key, it will only count the earlier key in the dictionary, even though another key is mentioned"""
 
 #Extract
 def extract_reddit(subreddit):
@@ -40,10 +33,7 @@ def population():
 # Transform 
 def transform_reddit(raw_data, user_dict):
     """Raw data transformed into informational data"""
-
-    # Create a dictionary of names to search for and their counters
-    #d = {"messi":0, "modric":0, "mbappe":0, "hakimi":0, "argentina":0, "croatia":0, "france":0, "morocco":0}
-
+    
     # Iterate through the title and body text of the first 100 posts in r/worldcup and search for the keys in dictionary
     for i in range (100):
         title = raw_data['data']['children'][i]['data']['title']

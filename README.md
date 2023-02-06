@@ -19,4 +19,4 @@ The load function is called with two parameters: the variable equated to the tra
 
 Matplotlib was used to visualize the results of the search via bar graph.
 
-2/5/23: Added posts input into url.
+2/5/23: Added posts input into url. Example used: r/nba subreddit, 22 entries.

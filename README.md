@@ -12,8 +12,9 @@ To avoid capitalization/matching issues, I converted all the text to lowercase, 
 After iteration of the first 100 posts, the dictionary with its updated values is returned and inputted into the load_reddit function (line 64).
 The load_reddit function takes in the dictionary and populates a csv file with the contents, formatting the keys and its corresponding values per line.
 
-Extract, Transform and Load functions are all called in lines 62, 63, and 64 respectively.
-The extract function is called with the name of the subreddit (as it would be in the url) as a parameter.
+Extract, Transform and Load functions are all called in lines 85, 87, and 88 respectively.
+The extract function is called with the name of the subreddit (as it would be in the url) and the amount of posts as a parameter.
+The populate function (line 86) returns a dictionary of user input words.
 The transform function is called with the extracted raw data as its parameter, equated to a variable.
 The load function is called with two parameters: the variable equated to the transform function, and the name for the csv file.
 
